@@ -1,0 +1,8 @@
+splunk-packaging-toolkit~=1.0.1
+requests~=2.32.3
+types-requests~=2.32.0.20240602
+splunk-handler~=3.0.0
+mypy~=1.10.0
+
+pytz~=2024.1
+types-pytz~=2024.1.0.20240417
