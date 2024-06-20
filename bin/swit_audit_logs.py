@@ -100,7 +100,7 @@ class AuditLog(Script):
 
     def _update_audit_logs(self, input_name, input_item):
         input_start_time = convert_user_input_time_to_epoch(input_item["start_time"])
-        current_time = int(time.time() * 1000)
+        current_time = int(time.time() * 1000) - 10000  # 10 seconds ago to avoid missing logs
 
         if input_start_time > current_time:
             return
