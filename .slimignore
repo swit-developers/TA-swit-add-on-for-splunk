@@ -155,16 +155,12 @@ cython_debug/
 .idea/
 
 /*.tar.gz
-.venv/
-.idea/
-.git/
 /.gitignore
 /local/
 /metadata/
-node_modules/
-/appserver/static/src/
+/appserver/static/*
+!/appserver/static/dist/
 /mypy.ini
-/readme.md
 /requirements.txt
-/images/
 /TA-swit-add-on-for-splunk/
+.*

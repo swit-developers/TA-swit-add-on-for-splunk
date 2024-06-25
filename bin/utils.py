@@ -58,9 +58,18 @@ class SwitTokens:
 
 
 def log(*data):
+    """
+    If you want to get logs from your custom server in real time,
+    you can set the LOGGER_ENDPOINT environment variable (.env) to
+    the endpoint of your custom server. The server should accept POST requests
+    with a JSON payload containing a 'content' key with a list of strings.
+    """
     print(data)
     logger_endpoint = os.environ.get("LOGGER_ENDPOINT")
     if logger_endpoint:
-        requests.post(logger_endpoint, json={
-            'content': [repr(d) for d in data]
-        })
+        try:
+            requests.post(logger_endpoint, json={
+                'content': [repr(d) for d in data]
+            })
+        except Exception as e:
+            print(f"Failed to log to the endpoint: {e}")
